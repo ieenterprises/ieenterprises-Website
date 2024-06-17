@@ -68,7 +68,7 @@
             width: 100%;
             text-align: center;
             color: rgb(114, 114, 114);
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             font-weight: bold;
             margin-top: 20px; /* Add margin to create space between carousel and footer */
             display: flex;
@@ -80,11 +80,11 @@
             justify-content: flex-end;
         }
         .social-media-links a {
-            margin: 0 10px;
+            margin: 0 3px;
         }
         .social-media-links img {
-            height: 30px;
-            width: 30px;
+            height: 20px;
+            width: 20px;
         }
     </style>
 </head>
@@ -126,13 +126,13 @@
         <img src="image6.png" alt="Image 6">
         <img src="image7.png" alt="Image 7">
         <div class="carousel-text-top absolute inset-x-0 top-20 text-white text-2xl font-bold text-center">Welcome to Innovative Euforia Enterprises</div>
-        <div class="carousel-text-bottom absolute inset-x-0 bottom-10 text-white text-2xl font-bold text-center" id="carouselTextBottom">Message for Image 1</div>
+        <div class="carousel-text-bottom absolute inset-x-0 bottom-10 text-white text-2xl font-bold text-center" id="carouselTextBottom">Collaboration fuels our quest for groundbreaking discoveries and innovations.</div>
         <button class="carousel-button prev left-4" onclick="showPrevImage()">&#10094;</button>
         <button class="carousel-button next right-4" onclick="showNextImage()">&#10095;</button>
     </div>
     
     <!-- Footer -->
-    <div class="footer px-4">
+    <div class="footer px-4 bg-gray-300 py-4 mt-auto">
         <div class="social-media-links">
             <a href="#"><img src="./linkedin logo_icon.png" alt="linkedin"></a>
             <a href="#"><img src="./facebook logo_icon.png" alt="facebook"></a>
@@ -142,7 +142,7 @@
             <a href="#"><img src="./whatsapp logo_icon.png" alt="whatsapp"></a>
         </div>
         <div class="footer-message">
-            &copy; 2024 Innovative Euforia Enterprises. All rights reserved.
+            &copy; ieEnterprises 2024. 
         </div>
     </div>
 
@@ -150,14 +150,15 @@
         let currentIndex = 0;
         const images = document.querySelectorAll('.carousel img');
         const totalImages = images.length;
-        const bottomTexts = [
+        const bottomTexts = 
+        [   
             "Collaboration fuels our quest for groundbreaking discoveries and innovations.",
             "Merging technology and Human expertise, to offers cutting-edge solutions tailored to your needs.",
             "In various fields, we set the standard for excellence and innovation.",
             "We are committed to leveraging technology to drive progress and development across Africa and the World.",
             "From concept to creation, we turn your ideas into stunning and functional designs.",
             "Join us as we celebrate achievements and strive for sustainable growth in every venture.",
-            "With innovative techniques we deliver unforgettable experiences."
+            "With innovative techniques we deliver unforgettable experiences.",
         ];
 
         function updateBottomText() {

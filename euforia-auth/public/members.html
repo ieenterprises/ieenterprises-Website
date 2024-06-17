@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="./Logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Area</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+       .footer {
+            width: 100%;
+            text-align: center;
+            color: rgb(114, 114, 114);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 20px; /* Add margin to create space between carousel and footer */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .social-media-links {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .social-media-links a {
+            margin: 0 3px;
+        }
+        .social-media-links img {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+    <script type="module" src="./members.js"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen bg-cover bg-center" style="background-image: url('./Background.png');">
+    <!-- Members Area Content -->
+    <div class="container mx-auto p-4 flex-grow">
+        <h1 class="text-2xl font-bold text-center mb-4">Welcome to ieEnterprises Members Area</h1>
+        <div class="bg-gray-200 p-8 rounded-lg shadow-lg flex items-center">
+            <!-- Business Logo -->
+            <img src="./Logo.png" alt="Business Logo" class="h-10 w-10 mr-4">
+            <!-- Member Information -->
+            <div>
+                <p class="text-x">Hello ! <span id="loggedUserFName" class="font-semibold"></span></p>
+                <p class="text-x">Email: <span id="loggedUserEmail" class="font-semibold"></span></p>
+                <button id="logout" class="mt-4 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer px-4 bg-gray-300 py-4 mt-auto">
+        <div class="social-media-links">
+            <a href="#"><img src="../../linkedin logo_icon.png" alt="linkedin"></a>
+            <a href="#"><img src="../../facebook logo_icon.png" alt="facebook"></a>
+            <a href="#"><img src="../../instagram logo_icon.png" alt="instagram"></a>
+            <a href="#"><img src="../../youtube logo_icon.png" alt="youtube"></a>
+            <a href="#"><img src="../../x_twitter logo_icon.png" alt="x_twitter_new"></a>
+            <a href="#"><img src="../../whatsapp logo_icon.png" alt="whatsapp"></a>
+        </div>
+        <div class="footer-message">
+            &copy; ieEnterprises 2024. 
+        </div>
+    </div>
+</body>
+</html>

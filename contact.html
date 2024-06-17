@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="./Logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Innovative Euforia Enterprises</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen bg-cover bg-center" style="background-image: url('./Background.png');">
+    <!-- Navigation Bar -->
+    <header class="w-full bg-gray-100 shadow-md">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <!-- Logo and Business Name -->
+            <div class="flex items-center space-x-4">
+                <img src="./Logo.png" alt="Business Logo" class="h-12 w-12">
+                <span class="text-xl font-bold">Innovative Euforia Enterprises</span>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-4">
+                <a href="./index.html" class="text-gray-700 hover:text-gray-900">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-gray-900">About Us</a>
+                <a href="#faq" class="text-gray-700 hover:text-gray-900">F.A.Q</a>
+                <a href="./euforia-auth/public/index.html" class="text-gray-700 hover:text-gray-900">Sign in/Sign Up</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 hover:text-gray-900" onclick="toggleMenu()">Menu</button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav id="mobileMenu" class="hidden md:hidden flex flex-col space-y-2 p-4 bg-white shadow-md">
+            <a href="./index.html" class="text-gray-700 hover:text-gray-900">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-gray-900">About Us</a>
+            <a href="#faq" class="text-gray-700 hover:text-gray-900">F.A.Q</a>
+            <a href="./euforia-auth/public/index.html" class="text-gray-700 hover:text-gray-900">Sign in/Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Contact Form Container -->
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 mt-8">
+            <div class="bg-gray-200 p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+                <h2 class="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+                <form id="contactForm" action="https://formsubmit.co/ieenterprises.ai@gmail.com" method="POST" class="space-y-4" novalidate>
+                    <!-- Honeypot for spam prevention -->
+                    <input type="text" name="_honey" style="display:none">
+                    <!-- Disable Captcha -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Redirect to a success page -->
+                    <input type="hidden" name="_next" value="">
+
+                    <div class="flex space-x-4">
+                        <div class="w-1/2">
+                            <label for="firstName" class="block text-sm font-medium text-gray-700">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" aria-required="true" required>
+                        </div>
+                        <div class="w-1/2">
+                            <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" aria-required="true" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" aria-required="true" required>
+                    </div>
+                    <div>
+                        <label for="queryType" class="block text-sm font-medium text-gray-700">Query Type *</label>
+                        <div class="mt-1 space-y-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="queryType" value="general" class="form-radio text-indigo-600" aria-required="true" required>
+                                <span class="ml-2">General Enquiry</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="queryType" value="support" class="form-radio text-indigo-600" aria-required="true" required>
+                                <span class="ml-2">Support Request</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message *</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" aria-required="true" required></textarea>
+                    </div>
+                    <div>
+                        <label for="file" class="block text-sm font-medium text-gray-700">Upload File</label>
+                        <input type="file" id="file" name="file" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" id="consent" name="consent" class="form-checkbox text-indigo-600" aria-required="true" required>
+                            <span class="ml-2">I consent to being contacted by the team *</span>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold text-center mb-4">Our Location</h2>
+            <div class="container mx-auto px-4">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0864205196593!2d-122.41941568468112!3d37.77492917975995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5c5d8e0d%3A0x4a3db2de8a7e37bb!2sInnovative%20Euforia%20Enterprises!5e0!3m2!1sen!2sus!4v1648770324956!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-gray-300 py-8 mt-8">
+        <div class="container mx-auto px-4 md:flex md:justify-between">
+            <!-- Contact Information -->
+            <div class="mb-8 md:mb-0">
+                <h2 class="text-lg font-bold mb-2">Contact Us</h2>
+                <p>Innovative Euforia Enterprises</p>
+                <p>Address: 21 Bekwere Wosu St., Phalga, Port Harcourt 500261, Rivers</p>
+                <p>Email: <a href="mailto:ieenterprises.ai+contact@gmail.com" class="text-indigo-600 hover:underline">ieenterprises.ai+contact@gmail.com</a></p>
+                <p>Phone: +234 914 0173 894</p>
+                <p>Hours: Monday - Friday, 9 AM - 5 PM</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#"><img src="./linkedin logo_icon.png" alt="linkedin" class="h-6 w-6"></a>
+                    <a href="#"><img src="./facebook logo_icon.png" alt="facebook" class="h-6 w-6"></a>
+                    <a href="#"><img src="./instagram logo_icon.png" alt="instagram" class="h-6 w-6"></a>
+                    <a href="#"><img src="./youtube logo_icon.png" alt="youtube" class="h-6 w-6"></a>
+                    <a href="#"><img src="./x_twitter logo_icon.png" alt="x_twitter_new" class="h-6 w-6"></a>
+                    <a href="#"><img src="./whatsapp logo_icon.png" alt="whatsapp" class="h-6 w-6"></a>
+                </div>
+            </div>
+            <!-- About Us -->
+            <div>
+                <h2 class="text-lg font-bold mb-2">About Us</h2>
+                <p>Innovative Euforia Enterprises is a multi-blend, cutting across:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>ieResearchHub - Pushing the boundaries of knowledge.</li>
+                    <li>ieFinance - Innovative solutions for your financial health.</li>
+                    <li>ieDesign - Crafting visions into reality.</li>
+                    <li>ieKitchen - Where taste meets innovation.</li>
+                </ul>
+                <p class="mt-4 text-center">&copy; 2024 Innovative Euforia Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Widget -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6616a163a0c6737bd12a56c8/1hr46cts6';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!-- End of Tawk.to Script -->
+
+    <script>
+        function toggleMenu() 
+        {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
